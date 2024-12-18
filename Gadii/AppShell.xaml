@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    x:Class="Gadii.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:Gadii"
+    xmlns:uranium="http://schemas.enisn-projects.io/dotnet/maui/uraniumui"
+    xmlns:material="http://schemas.enisn-projects.io/dotnet/maui/uraniumui/material"
+    xmlns:localview="clr-namespace:Gadii.View"
+    xmlns:fa="clr-namespace:UraniumUI.Icons.FontAwesome;assembly=UraniumUI.Icons.FontAwesome"
+    Shell.TabBarIsVisible="False"
+    >
+   
+    <Shell.FlyoutHeader>
+        <Grid Padding="5">
+            <Image WidthRequest="40" HeightRequest="50">
+                <Image.Source>
+                    <FontImageSource FontFamily="FASolid" 
+                                     Glyph="{x:Static fa:Solid.User}" Color="{StaticResource Primary}" />
+                </Image.Source>
+            </Image>
+        </Grid>
+        
+    </Shell.FlyoutHeader>
+    <ShellContent
+        FlyoutItemIsVisible="False"
+        Shell.FlyoutBehavior="Disabled" 
+        Icon="{FontImageSource FontFamily=MaterialSharp, 
+        Glyph={x:Static uranium:MaterialSharp.Login},Color=Green}"
+         ContentTemplate="{DataTemplate localview:LoginView}"
+        Route="LoginView" />
+
+    <FlyoutItem Route="MainPage" FlyoutDisplayOptions="AsMultipleItems">
+        <ShellContent
+        Title="Home" 
+        Icon="{FontImageSource FontFamily=MaterialSharp, 
+        Glyph={x:Static uranium:MaterialSharp.Home},Color=Green}"
+        ContentTemplate="{DataTemplate local:MainPage}"
+         />
+   
+        <ShellContent
+        Title="Transport"
+        Icon="{FontImageSource FontFamily=MaterialSharp, 
+        Glyph={x:Static uranium:MaterialSharp.Fire_truck},Color=Green}"
+        ContentTemplate="{DataTemplate localview:TransportHomePage}"
+        Route="TransportHomeView" />
+
+        <ShellContent
+        Title="Account"
+        Icon="{FontImageSource FontFamily=MaterialSharp, 
+        Glyph={x:Static uranium:MaterialSharp.Manage_accounts},Color=Green}"
+         ContentTemplate="{DataTemplate localview:AccountView}"
+        Route="AccountView" />
+
+
+        <ShellContent
+        Title="Settings"
+        Icon="{FontImageSource FontFamily=MaterialSharp, 
+        Glyph={x:Static uranium:MaterialSharp.Settings},Color=Green}"
+         ContentTemplate="{DataTemplate localview:Settings}"
+        Route="Settings" />
+
+        <ShellContent
+        Title="Help?"
+        Icon="{FontImageSource FontFamily=MaterialSharp, 
+        Glyph={x:Static uranium:MaterialSharp.Help},Color=Green}"
+         ContentTemplate="{DataTemplate localview:HelpView}"
+        Route="HelpView" />
+
+      
+    </FlyoutItem>
+    <Shell.FlyoutFooter>
+        <Grid Padding="15">
+            <Button 
+            Text="Log Out" Clicked="Logout_Clicked"  
+            StyleClass="FilledButton"/>
+        </Grid>
+    </Shell.FlyoutFooter>
+</Shell>

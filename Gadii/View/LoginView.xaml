@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<uranium:UraniumContentPage 
+              xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:uranium="http://schemas.enisn-projects.io/dotnet/maui/uraniumui"
+             xmlns:material="http://schemas.enisn-projects.io/dotnet/maui/uraniumui/material"
+             xmlns:input="clr-namespace:InputKit.Shared.Controls;assembly=InputKit.Maui"
+             xmlns:validation="clr-namespace:InputKit.Shared.Validations;assembly=InputKit.Maui"
+             x:Class="Gadii.View.LoginView"
+             xmlns:fa="clr-namespace:UraniumUI.Icons.FontAwesome;assembly=UraniumUI.Icons.FontAwesome"
+             xmlns:local="clr-namespace:Gadii.ViewModel"
+           >
+    <uranium:UraniumContentPage.BindingContext>
+        <local:LoginViewModel />
+    </uranium:UraniumContentPage.BindingContext>
+
+
+    <input:FormView SubmitCommand="{Binding LoginCommand}" 
+                     Spacing="10" Padding="25,30" 
+                     HorizontalOptions="Center"
+                     MaximumWidthRequest="400">
+        <Image WidthRequest="40" HeightRequest="50">
+            <Image.Source>
+                <FontImageSource FontFamily="FASolid" 
+                     Glyph="{x:Static fa:Solid.User}" Color="{StaticResource Primary}" />
+            </Image.Source>
+        </Image>
+        <material:TextField 
+                
+                Title="Login ID" 
+                Icon="{FontImageSource FontFamily=MaterialSharp, 
+                Glyph={x:Static uranium:MaterialSharp.Stacked_email}}"
+                Text="{Binding PickupPoint}">
+
+            <material:TextField.Validations>
+                <validation:RequiredValidation />
+            </material:TextField.Validations>
+        </material:TextField>
+
+        <material:TextField 
+            IsPassword="true"
+                
+                Title="Password" 
+                Icon="{FontImageSource FontFamily=MaterialSharp, 
+                Glyph={x:Static uranium:MaterialSharp.Password}}"
+                Text="{Binding DestinationPoint}">
+            <material:TextField.Attachments>
+                <material:TextFieldPasswordShowHideAttachment />
+            </material:TextField.Attachments>
+            <material:TextField.Validations>
+                <validation:RequiredValidation />
+            </material:TextField.Validations>
+        </material:TextField>
+
+
+        <Button 
+             input:FormView.IsSubmitButton="True"
+             Text="LogIn"
+             StyleClass="FilledButton" />
+        <uranium:SelectableLabel HorizontalTextAlignment="Center" Text="Are you New User?"/>
+        <Grid >
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="15"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Label Padding="2">
+                <Label.FormattedText>
+                    <FormattedString>
+                        <Span Text="Create account"
+                  TextColor="Blue" >
+                            <Span.GestureRecognizers>
+                                <TapGestureRecognizer Command="{Binding CreateAccountCommand}"
+                                          CommandParameter="https://learn.microsoft.com/dotnet/maui/" />
+                            </Span.GestureRecognizers>
+                        </Span>
+                    </FormattedString>
+                </Label.FormattedText>
+            </Label>
+            <Label Grid.Column="2" Padding="2">
+                <Label.FormattedText>
+                    <FormattedString>
+                        <Span Text="Register Vahicle" TextColor="Blue" >
+                            <Span.GestureRecognizers>
+                                <TapGestureRecognizer Command="{Binding RegisterVihicleCommand}"
+                                          CommandParameter="https://learn.microsoft.com/dotnet/maui/" />
+                            </Span.GestureRecognizers>
+                        </Span>
+                    </FormattedString>
+                </Label.FormattedText>
+            </Label>
+
+
+        </Grid>
+    </input:FormView>
+
+</uranium:UraniumContentPage>

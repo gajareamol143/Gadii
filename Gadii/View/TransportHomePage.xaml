@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<uranium:UraniumContentPage 
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:uranium="http://schemas.enisn-projects.io/dotnet/maui/uraniumui"
+             xmlns:material="http://schemas.enisn-projects.io/dotnet/maui/uraniumui/material"
+             xmlns:input="clr-namespace:InputKit.Shared.Controls;assembly=InputKit.Maui"
+             xmlns:validation="clr-namespace:InputKit.Shared.Validations;assembly=InputKit.Maui"
+             x:Class="Gadii.View.TransportHomePage"
+             xmlns:local="clr-namespace:Gadii.ViewModel"
+             Title="TransportHomePage">
+    <uranium:UraniumContentPage.BindingContext>
+        <local:TransportViewModel />
+    </uranium:UraniumContentPage.BindingContext>
+
+    <uranium:UraniumContentPage.Resources>
+        <Style TargetType="Frame">
+            <Setter Property="BackgroundColor" Value="{AppThemeBinding Light={StaticResource SecondaryContainer}, Dark={StaticResource SecondaryContainerDark}}" />
+        </Style>
+        <Style TargetType="material:AutoCompleteTextField">
+            <Setter Property="AccentColor" Value="{StaticResource OnPrimary}" />
+            <Setter Property="BorderColor" Value="{StaticResource OnSecondary}" />
+         
+           <Style.Triggers>
+                <Trigger TargetType="material:AutoCompleteTextField" Property="IsFocused" Value="True">
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+    </uranium:UraniumContentPage.Resources>
+
+    <ScrollView>
+
+        <VerticalStackLayout Spacing="10">
+
+            <material:DataGrid ItemsSource="{Binding Items}" SelectedItems="{Binding SelectedItems}" HorizontalOptions="Center" VerticalOptions="Center">
+                <material:DataGrid.Columns>
+                    <material:DataGridSelectionColumn/>
+
+                    <material:DataGridColumn ValueBinding="{Binding Content}" Title="Todo" />
+
+                    <material:DataGridColumn ValueBinding="{Binding Type}" Title="Type"/>
+
+                    <material:DataGridColumn ValueBinding="{Binding IsDone}" Title="Done"/>
+
+                </material:DataGrid.Columns>
+            </material:DataGrid>
+        </VerticalStackLayout>
+
+    </ScrollView>
+
+    <uranium:UraniumContentPage.Attachments>
+        <material:BackdropView
+             Title="Add Ride" 
+             IconImageSource="{FontImageSource FontFamily=MaterialSharp,
+             Glyph={x:Static uranium:MaterialSharp.Car_rental}, 
+             Color={StaticResource OnPrimary}}"
+             BackgroundColor="{AppThemeBinding Light={StaticResource Primary}, Dark={StaticResource Gray950}}">
+            <input:FormView SubmitCommand="{Binding AddNewItemCommand}" 
+                         Spacing="10" Padding="25,30" 
+                         HorizontalOptions="Center"
+                         MaximumWidthRequest="400">
+
+                <material:AutoCompleteTextField 
+                    MinimumWidthRequest="300"
+                    Title="Pickup Point" 
+                    Icon="{FontImageSource FontFamily=MaterialSharp, 
+                    Glyph={x:Static uranium:MaterialSharp.Pin_drop}}"
+                    Text="{Binding PickupPoint}"
+                    ItemsSource="{Binding Suggestions,Mode=TwoWay}">
+                        <material:AutoCompleteTextField.Validations>
+                            <validation:RequiredValidation />
+                        </material:AutoCompleteTextField.Validations>
+                    </material:AutoCompleteTextField>
+                
+                <material:AutoCompleteTextField 
+                     MinimumWidthRequest="300"
+                    Title="Destination Point" 
+                    Icon="{FontImageSource FontFamily=MaterialSharp, 
+                    Glyph={x:Static uranium:MaterialSharp.Pin_drop}}"
+                    Text="{Binding DestinationPoint}"
+                    ItemsSource="{Binding Suggestions,Mode=TwoWay}">
+                    <material:AutoCompleteTextField.Validations>
+                        <validation:RequiredValidation />
+                    </material:AutoCompleteTextField.Validations>
+                </material:AutoCompleteTextField>
+
+              
+
+                    <Button 
+                 input:FormView.IsSubmitButton="True"
+                 Text="Add"
+                 StyleClass="ElevatedButton"/>
+            </input:FormView>
+        </material:BackdropView>
+        <material:BottomSheetView x:Name="bottomSheet2">
+            <TableView Intent="Menu" Margin="0,0,0,40" BackgroundColor="Transparent">
+                <TableRoot>
+                    <TableSection Title="Actions">
+                        <ImageCell Text="Share" ImageSource="{FontImageSource FontFamily=MaterialSharp, Glyph={x:Static uranium:MaterialSharp.Share}, Color={StaticResource Primary}}"
+                         Detail="Share this content with friends." />
+                        <ImageCell Text="Link" ImageSource="{FontImageSource FontFamily=MaterialSharp, Glyph={x:Static uranium:MaterialSharp.Link}, Color={StaticResource Primary}}"
+                         Detail="Get link to this content" />
+                        <ImageCell Text="Report" ImageSource="{FontImageSource FontFamily=MaterialSharp, Glyph={x:Static uranium:MaterialSharp.Report}, Color={StaticResource Primary}}"
+                         Detail="Report this content." />
+                    </TableSection>
+                </TableRoot>
+            </TableView>
+        </material:BottomSheetView>
+    </uranium:UraniumContentPage.Attachments>
+</uranium:UraniumContentPage>
