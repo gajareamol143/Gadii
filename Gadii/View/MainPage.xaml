@@ -6,6 +6,7 @@
              xmlns:material="http://schemas.enisn-projects.io/dotnet/maui/uraniumui/material"
              xmlns:input="clr-namespace:InputKit.Shared.Controls;assembly=InputKit.Maui"
              xmlns:validation="clr-namespace:InputKit.Shared.Validations;assembly=InputKit.Maui"
+             xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
              x:Class="Gadii.MainPage"
              xmlns:local="clr-namespace:Gadii.ViewModel"
              x:Name="page">
@@ -17,14 +18,11 @@
         <Style TargetType="Frame">
             <Setter Property="BackgroundColor" Value="{AppThemeBinding Light={StaticResource SecondaryContainer}, Dark={StaticResource SecondaryContainerDark}}" />
         </Style>
-        <Style TargetType="material:AutoCompleteTextField">
+        <Style TargetType="material:TextField">
             <Setter Property="AccentColor" Value="{StaticResource OnPrimary}" />
             <Setter Property="BorderColor" Value="{StaticResource OnSecondary}" />
 
-            <Style.Triggers>
-                <Trigger TargetType="material:AutoCompleteTextField" Property="IsFocused" Value="True">
-                </Trigger>
-            </Style.Triggers>
+            
         </Style>
     </uranium:UraniumContentPage.Resources>
 
@@ -36,57 +34,72 @@
                 <material:DataGrid.Columns>
                     <material:DataGridSelectionColumn/>
 
-                    <material:DataGridColumn ValueBinding="{Binding Content}" Title="Todo" />
+                    <material:DataGridColumn ValueBinding="{Binding Content}" Title="Config" />
 
-                    <material:DataGridColumn ValueBinding="{Binding Type}" Title="Type"/>
+                    <material:DataGridColumn ValueBinding="{Binding Type}" Title="Config Type"/>
 
-                    <material:DataGridColumn ValueBinding="{Binding IsDone}" Title="Done"/>
+                    <material:DataGridColumn ValueBinding="{Binding IntervalTime}" Title="Interval (Min)"/>
+                    <material:DataGridColumn ValueBinding="{Binding Time}" Title="Time"/>
 
                 </material:DataGrid.Columns>
             </material:DataGrid>
+            <Grid Padding="10">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="10*"/>
+                    <RowDefinition Height="10*"/>
+                    <RowDefinition Height="10*"/>
+                    <RowDefinition Height="10*"/>
+                    <RowDefinition Height="10*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="10*"/>
+                    <ColumnDefinition Width="10*"/>
+                    <ColumnDefinition Width="10*"/>
+                    <ColumnDefinition Width="10*"/>
+                    <ColumnDefinition Width="10*"/>
+                </Grid.ColumnDefinitions>
+                <Button Grid.Column="4" Grid.Row="4" Text="Submit"/>
+            </Grid>
+            
         </VerticalStackLayout>
-
+        
     </ScrollView>
 
     <uranium:UraniumContentPage.Attachments>
         <material:BackdropView
-                Title="Add Ride" 
+                Title="Add Config" 
                 IconImageSource="{FontImageSource FontFamily=MaterialSharp,
-                Glyph={x:Static uranium:MaterialSharp.Car_rental}, 
+                Glyph={x:Static uranium:MaterialSharp.Add}, 
                 Color={StaticResource OnPrimary}}"
                 BackgroundColor="{AppThemeBinding Light={StaticResource Primary}, Dark={StaticResource Gray950}}">
             <input:FormView SubmitCommand="{Binding AddNewItemCommand}" 
                             Spacing="10" Padding="25,30" 
                             HorizontalOptions="Center"
                             MaximumWidthRequest="400">
-                <material:AutoCompleteTextField 
-     Title="Pickup Point" 
-     MinimumWidthRequest="300"
-     Icon="{FontImageSource FontFamily=MaterialSharp, 
-     Glyph={x:Static uranium:MaterialSharp.Pin_drop}}"
-     Text="{Binding PickupPoint}"
-     ItemsSource="{Binding Suggestions,Mode=TwoWay}">
-                    <material:AutoCompleteTextField.Validations>
-                        <validation:RequiredValidation />
-                    </material:AutoCompleteTextField.Validations>
-                </material:AutoCompleteTextField>
+                <material:TextField 
+                Title="Add New Alert" 
+                MinimumWidthRequest="300"
+                Icon="{FontImageSource FontFamily=MaterialSharp, 
+                Glyph={x:Static uranium:MaterialSharp.Note_add}}"
+                    BorderColor="Black"
+                Text="{Binding Config}">
+                </material:TextField>
 
-                <material:AutoCompleteTextField 
-     Title="Destination Point" 
-     MinimumWidthRequest="300"
-     Icon="{FontImageSource FontFamily=MaterialSharp, 
-     Glyph={x:Static uranium:MaterialSharp.Pin_drop}}"
-     Text="{Binding DestinationPoint}"
-     ItemsSource="{Binding Suggestions,Mode=TwoWay}">
-                    <material:AutoCompleteTextField.Validations>
-                        <validation:RequiredValidation />
-                    </material:AutoCompleteTextField.Validations>
-                </material:AutoCompleteTextField>
+                <Label Text="Pick Time"/>  <TimePicker Time="{Binding PickTime}">
+                   
+                </TimePicker>
+                    
+                <uranium:SelectableLabel HorizontalTextAlignment="Center" Text="OR"/>
+                <material:TextField Title="Interval Time (min)" Text="{Binding IntervalTime}" MaxLength="3"/>
+
+
 
                 <Button 
                     input:FormView.IsSubmitButton="True"
                     Text="Add"
                     StyleClass="ElevatedButton"/>
+
+                
             </input:FormView>
         </material:BackdropView>
         <material:BottomSheetView x:Name="bottomSheet">
@@ -102,8 +115,11 @@
                     </TableSection>
                 </TableRoot>
             </TableView>
+            
         </material:BottomSheetView>
+        
     </uranium:UraniumContentPage.Attachments>
+    
 </uranium:UraniumContentPage>
 
 

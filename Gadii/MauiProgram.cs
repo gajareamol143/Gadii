@@ -3,16 +3,18 @@ using Mopups.Hosting;
 using UraniumUI;
 using UraniumUI.Icons.MaterialSymbols;
 using UraniumUI.Icons.FontAwesome;
+using CommunityToolkit.Maui;
 
 namespace Gadii
 {
     public static class MauiProgram
     {
+        public static DateTime SystemStartTime {  get; set; }   
         public static MauiApp CreateMauiApp()
         {
             var builder = MauiApp.CreateBuilder();
             builder
-                .UseMauiApp<App>()
+                .UseMauiApp<App>().UseMauiCommunityToolkit().UseMauiCommunityToolkitCamera()
                 .ConfigureMopups()
                 .UseUraniumUIBlurs()
                 .UseUraniumUI()
@@ -29,6 +31,7 @@ namespace Gadii
                 });
 
             builder.Services.AddMopupsDialogs();
+            SystemStartTime=System.DateTime.Now;
             return builder.Build();
         }
     }

@@ -339,7 +339,7 @@
         </Setter>
     </Style>
 
-    <Style TargetType="TimePicker">
+    <!--<Style TargetType="TimePicker">
         <Setter Property="TextColor" Value="{AppThemeBinding Light={StaticResource Gray900}, Dark={StaticResource White}}" />
         <Setter Property="Background" Value="Transparent"/>
         <Setter Property="FontFamily" Value="OpenSansRegular"/>
@@ -356,7 +356,7 @@
                 </VisualStateGroup>
             </VisualStateGroupList>
         </Setter>
-    </Style>
+    </Style>-->
 
     <Style TargetType="Page" ApplyToDerivedTypes="True">
         <Setter Property="Padding" Value="0"/>

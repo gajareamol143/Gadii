@@ -18,7 +18,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Gadii")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0+96072e7b74099f7c09190fc916bc8d78381839e7")]
 [assembly: System.Reflection.AssemblyProductAttribute("Gadii")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Gadii")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

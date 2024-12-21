@@ -1,9 +1,4 @@
 is_global = true
-build_property.EnableAotAnalyzer = 
-build_property.EnableSingleFileAnalyzer = 
-build_property.EnableTrimAnalyzer = false
-build_property.IncludeAllContentForSelfExtract = 
-build_property.MvvmToolkitEnableINotifyPropertyChangingSupport = true
 build_property.TargetFramework = net8.0-ios
 build_property.TargetPlatformMinVersion = 
 build_property.UsingMicrosoftNETSdkWeb = 
@@ -13,80 +8,8 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = Gadii
-build_property.ProjectDir = C:\Users\Shree\source\repos\gajareamol143\Hackathon\Gadii\
+build_property.ProjectDir = C:\Users\agajare\Documents\Gadii\Gadii\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.EffectiveAnalysisLevelStyle = 8.0
 build_property.EnableCodeStyleSeverity = 
-
-[C:/Users/Shree/source/repos/gajareamol143/Hackathon/Gadii/App.xaml]
-build_metadata.AdditionalFiles.GenKind = Xaml
-build_metadata.AdditionalFiles.ManifestResourceName = Gadii.App.xaml
-build_metadata.AdditionalFiles.TargetPath = App.xaml
-build_metadata.AdditionalFiles.RelativePath = App.xaml
-
-[C:/Users/Shree/source/repos/gajareamol143/Hackathon/Gadii/AppShell.xaml]
-build_metadata.AdditionalFiles.GenKind = Xaml
-build_metadata.AdditionalFiles.ManifestResourceName = Gadii.AppShell.xaml
-build_metadata.AdditionalFiles.TargetPath = AppShell.xaml
-build_metadata.AdditionalFiles.RelativePath = AppShell.xaml
-
-[C:/Users/Shree/source/repos/gajareamol143/Hackathon/Gadii/Resources/Styles/Colors.xaml]
-build_metadata.AdditionalFiles.GenKind = Xaml
-build_metadata.AdditionalFiles.ManifestResourceName = Gadii.Resources.Styles.Colors.xaml
-build_metadata.AdditionalFiles.TargetPath = Resources\Styles\Colors.xaml
-build_metadata.AdditionalFiles.RelativePath = Resources\Styles\Colors.xaml
-
-[C:/Users/Shree/source/repos/gajareamol143/Hackathon/Gadii/Resources/Styles/Styles.xaml]
-build_metadata.AdditionalFiles.GenKind = Xaml
-build_metadata.AdditionalFiles.ManifestResourceName = Gadii.Resources.Styles.Styles.xaml
-build_metadata.AdditionalFiles.TargetPath = Resources\Styles\Styles.xaml
-build_metadata.AdditionalFiles.RelativePath = Resources\Styles\Styles.xaml
-
-[C:/Users/Shree/source/repos/gajareamol143/Hackathon/Gadii/View/AccountView.xaml]
-build_metadata.AdditionalFiles.GenKind = Xaml
-build_metadata.AdditionalFiles.ManifestResourceName = Gadii.View.AccountView.xaml
-build_metadata.AdditionalFiles.TargetPath = View\AccountView.xaml
-build_metadata.AdditionalFiles.RelativePath = View\AccountView.xaml
-
-[C:/Users/Shree/source/repos/gajareamol143/Hackathon/Gadii/View/CreateAccountView.xaml]
-build_metadata.AdditionalFiles.GenKind = Xaml
-build_metadata.AdditionalFiles.ManifestResourceName = Gadii.View.CreateAccountView.xaml
-build_metadata.AdditionalFiles.TargetPath = View\CreateAccountView.xaml
-build_metadata.AdditionalFiles.RelativePath = View\CreateAccountView.xaml
-
-[C:/Users/Shree/source/repos/gajareamol143/Hackathon/Gadii/View/HelpView.xaml]
-build_metadata.AdditionalFiles.GenKind = Xaml
-build_metadata.AdditionalFiles.ManifestResourceName = Gadii.View.HelpView.xaml
-build_metadata.AdditionalFiles.TargetPath = View\HelpView.xaml
-build_metadata.AdditionalFiles.RelativePath = View\HelpView.xaml
-
-[C:/Users/Shree/source/repos/gajareamol143/Hackathon/Gadii/View/LoginView.xaml]
-build_metadata.AdditionalFiles.GenKind = Xaml
-build_metadata.AdditionalFiles.ManifestResourceName = Gadii.View.LoginView.xaml
-build_metadata.AdditionalFiles.TargetPath = View\LoginView.xaml
-build_metadata.AdditionalFiles.RelativePath = View\LoginView.xaml
-
-[C:/Users/Shree/source/repos/gajareamol143/Hackathon/Gadii/View/MainPage.xaml]
-build_metadata.AdditionalFiles.GenKind = Xaml
-build_metadata.AdditionalFiles.ManifestResourceName = Gadii.View.MainPage.xaml
-build_metadata.AdditionalFiles.TargetPath = View\MainPage.xaml
-build_metadata.AdditionalFiles.RelativePath = View\MainPage.xaml
-
-[C:/Users/Shree/source/repos/gajareamol143/Hackathon/Gadii/View/RegisterVehicleView.xaml]
-build_metadata.AdditionalFiles.GenKind = Xaml
-build_metadata.AdditionalFiles.ManifestResourceName = Gadii.View.RegisterVehicleView.xaml
-build_metadata.AdditionalFiles.TargetPath = View\RegisterVehicleView.xaml
-build_metadata.AdditionalFiles.RelativePath = View\RegisterVehicleView.xaml
-
-[C:/Users/Shree/source/repos/gajareamol143/Hackathon/Gadii/View/Settings.xaml]
-build_metadata.AdditionalFiles.GenKind = Xaml
-build_metadata.AdditionalFiles.ManifestResourceName = Gadii.View.Settings.xaml
-build_metadata.AdditionalFiles.TargetPath = View\Settings.xaml
-build_metadata.AdditionalFiles.RelativePath = View\Settings.xaml
-
-[C:/Users/Shree/source/repos/gajareamol143/Hackathon/Gadii/View/TransportHomePage.xaml]
-build_metadata.AdditionalFiles.GenKind = Xaml
-build_metadata.AdditionalFiles.ManifestResourceName = Gadii.View.TransportHomePage.xaml
-build_metadata.AdditionalFiles.TargetPath = View\TransportHomePage.xaml
-build_metadata.AdditionalFiles.RelativePath = View\TransportHomePage.xaml

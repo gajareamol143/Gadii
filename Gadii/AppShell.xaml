@@ -38,13 +38,7 @@
         ContentTemplate="{DataTemplate local:MainPage}"
          />
    
-        <ShellContent
-        Title="Transport"
-        Icon="{FontImageSource FontFamily=MaterialSharp, 
-        Glyph={x:Static uranium:MaterialSharp.Fire_truck},Color=Green}"
-        ContentTemplate="{DataTemplate localview:TransportHomePage}"
-        Route="TransportHomeView" />
-
+       
         <ShellContent
         Title="Account"
         Icon="{FontImageSource FontFamily=MaterialSharp, 

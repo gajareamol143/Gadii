@@ -58,40 +58,7 @@
              Text="LogIn"
              StyleClass="FilledButton" />
         <uranium:SelectableLabel HorizontalTextAlignment="Center" Text="Are you New User?"/>
-        <Grid >
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="*"/>
-                <ColumnDefinition Width="15"/>
-                <ColumnDefinition Width="*"/>
-            </Grid.ColumnDefinitions>
-            <Label Padding="2">
-                <Label.FormattedText>
-                    <FormattedString>
-                        <Span Text="Create account"
-                  TextColor="Blue" >
-                            <Span.GestureRecognizers>
-                                <TapGestureRecognizer Command="{Binding CreateAccountCommand}"
-                                          CommandParameter="https://learn.microsoft.com/dotnet/maui/" />
-                            </Span.GestureRecognizers>
-                        </Span>
-                    </FormattedString>
-                </Label.FormattedText>
-            </Label>
-            <Label Grid.Column="2" Padding="2">
-                <Label.FormattedText>
-                    <FormattedString>
-                        <Span Text="Register Vahicle" TextColor="Blue" >
-                            <Span.GestureRecognizers>
-                                <TapGestureRecognizer Command="{Binding RegisterVihicleCommand}"
-                                          CommandParameter="https://learn.microsoft.com/dotnet/maui/" />
-                            </Span.GestureRecognizers>
-                        </Span>
-                    </FormattedString>
-                </Label.FormattedText>
-            </Label>
-
-
-        </Grid>
+         <BoxView StyleClass="Elevation1" />
     </input:FormView>
 
 </uranium:UraniumContentPage>
