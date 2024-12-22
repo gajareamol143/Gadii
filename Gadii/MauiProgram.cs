@@ -29,7 +29,6 @@ namespace Gadii
                     fonts.AddFontAwesomeIconFonts();
 
                 });
-
             builder.Services.AddMopupsDialogs();
             SystemStartTime=System.DateTime.Now;
             return builder.Build();

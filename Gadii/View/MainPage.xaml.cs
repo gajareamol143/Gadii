@@ -1,16 +1,15 @@
-﻿using InputKit.Shared.Controls;
+﻿using CommunityToolkit.Maui.Views;
+using HeathCare.View;
+using InputKit.Shared.Controls;
+using Mopups.Services;
+using UraniumUI.Dialogs;
 using UraniumUI.Pages;
-using CommunityToolkit.Maui; // For Community Toolkit
-using Microsoft.Maui.Controls; // For MAUI controls
-using System;
-using System.IO;
-using System.Threading.Tasks;
-using Microsoft.Maui.Graphics; // For ImageSource
 
 namespace Gadii
 {
     public partial class MainPage : UraniumContentPage
     {
+        private readonly IDialogService _dialogService;
         public MainPage()
         {
             SelectionView.GlobalSetting.CornerRadius = 0;
@@ -21,6 +20,12 @@ namespace Gadii
         {
           
         }
-     
+
+        private async void ImageButton_Clicked(object sender, EventArgs e)
+        {
+             var popup = new PopapePagenew();
+            MopupService.Instance.PushAsync(popup);
+
+        }
     }
 }

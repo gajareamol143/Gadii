@@ -9,7 +9,6 @@
     <Import Project="$(NuGetPackageRoot)microsoft.maui.core\8.0.83\buildTransitive\net6.0-windows10.0.17763.0\Microsoft.Maui.Core.targets" Condition="Exists('$(NuGetPackageRoot)microsoft.maui.core\8.0.83\buildTransitive\net6.0-windows10.0.17763.0\Microsoft.Maui.Core.targets')" />
     <Import Project="$(NuGetPackageRoot)microsoft.maui.controls.build.tasks\8.0.83\buildTransitive\net6.0-windows10.0.17763.0\Microsoft.Maui.Controls.Build.Tasks.targets" Condition="Exists('$(NuGetPackageRoot)microsoft.maui.controls.build.tasks\8.0.83\buildTransitive\net6.0-windows10.0.17763.0\Microsoft.Maui.Controls.Build.Tasks.targets')" />
     <Import Project="$(NuGetPackageRoot)system.text.json\8.0.1\buildTransitive\net6.0\System.Text.Json.targets" Condition="Exists('$(NuGetPackageRoot)system.text.json\8.0.1\buildTransitive\net6.0\System.Text.Json.targets')" />
-    <Import Project="$(NuGetPackageRoot)openposedotnet\1.4.0.20190117\build\OpenPoseDotNet.targets" Condition="Exists('$(NuGetPackageRoot)openposedotnet\1.4.0.20190117\build\OpenPoseDotNet.targets')" />
     <Import Project="$(NuGetPackageRoot)communitytoolkit.mvvm\8.3.2\buildTransitive\CommunityToolkit.Mvvm.targets" Condition="Exists('$(NuGetPackageRoot)communitytoolkit.mvvm\8.3.2\buildTransitive\CommunityToolkit.Mvvm.targets')" />
   </ImportGroup>
 </Project>

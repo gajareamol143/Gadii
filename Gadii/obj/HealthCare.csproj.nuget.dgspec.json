@@ -92,9 +92,9 @@
               "target": "Package",
               "version": "[13.0.3, )"
             },
-            "OpenPoseDotNet": {
+            "RestSharp": {
               "target": "Package",
-              "version": "[1.4.0.20190117, )"
+              "version": "[112.1.0, )"
             },
             "UraniumUI.Blurs": {
               "target": "Package",

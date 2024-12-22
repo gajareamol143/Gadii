@@ -58,7 +58,18 @@
                     <ColumnDefinition Width="10*"/>
                     <ColumnDefinition Width="10*"/>
                 </Grid.ColumnDefinitions>
-                <Button Grid.Column="4" Grid.Row="4" Text="Submit"/>
+                <Label/>
+                <Label Grid.Row="1" HeightRequest="50"/>
+                <Label Grid.Row="2" HeightRequest="50"/>
+                <Label Grid.Row="3" HeightRequest="50"/>
+                <ImageButton Source="https://cdn.icon-icons.com/icons2/806/PNG/512/chat-21_icon-icons.com_65993.png" 
+                             Grid.Column="4" Grid.Row="4" 
+                             HeightRequest="50"
+                             WidthRequest="50"
+                             Clicked="ImageButton_Clicked"
+                             BorderColor="AliceBlue"
+                             />
+                
             </Grid>
             
         </VerticalStackLayout>

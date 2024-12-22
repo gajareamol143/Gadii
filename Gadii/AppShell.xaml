@@ -22,13 +22,7 @@
         </Grid>
         
     </Shell.FlyoutHeader>
-    <ShellContent
-        FlyoutItemIsVisible="False"
-        Shell.FlyoutBehavior="Disabled" 
-        Icon="{FontImageSource FontFamily=MaterialSharp, 
-        Glyph={x:Static uranium:MaterialSharp.Login},Color=Green}"
-         ContentTemplate="{DataTemplate localview:LoginView}"
-        Route="LoginView" />
+    
 
     <FlyoutItem Route="MainPage" FlyoutDisplayOptions="AsMultipleItems">
         <ShellContent
@@ -40,9 +34,9 @@
    
        
         <ShellContent
-        Title="Account"
+        Title="Dashboard"
         Icon="{FontImageSource FontFamily=MaterialSharp, 
-        Glyph={x:Static uranium:MaterialSharp.Manage_accounts},Color=Green}"
+        Glyph={x:Static uranium:MaterialSharp.Dashboard},Color=Green}"
          ContentTemplate="{DataTemplate localview:AccountView}"
         Route="AccountView" />
 

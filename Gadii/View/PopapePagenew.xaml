@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<popup:PopupPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+                 xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                 xmlns:popup="clr-namespace:Mopups.Pages;assembly=Mopups"
+                 x:Class="HeathCare.View.PopapePagenew"
+                 BackgroundColor="Transparent">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+
+        <Border Grid.Row="1"
+                Stroke="Black"
+                StrokeThickness="2"
+                Background="White"
+                StrokeShape="RoundRectangle 15"
+                Padding="10"
+                VerticalOptions="End"
+                HorizontalOptions="End"
+                WidthRequest="300"
+                HeightRequest="400"
+                Margin="20">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+
+                <!-- Close Button -->
+                <Button Text="X"
+                        Grid.Row="0"
+                        HorizontalOptions="End"
+                        VerticalOptions="Start"
+                        Clicked="OnCloseButtonClicked"
+                        BackgroundColor="Transparent"
+                        TextColor="Black"/>
+
+                <!-- Chat Title -->
+                <Label Grid.Row="0"
+                       Text="Chat with AI" 
+                       FontSize="24" 
+                       FontAttributes="Bold" 
+                       HorizontalOptions="Center" 
+                       Margin="0,20,0,10"/>
+
+                <!-- Chat Messages List -->
+                <ScrollView Grid.Row="1"
+                            VerticalOptions="FillAndExpand">
+                    <VerticalStackLayout x:Name="MessagesStackLayout"
+                                         Padding="10">
+                        <!-- Initial Chat Bubble -->
+                        <Frame BackgroundColor="#E0E0E0" CornerRadius="15" Margin="0,5">
+                            <Label Text="Hello! How can I help you today?" 
+                                   Margin="10"
+                                   HorizontalOptions="Start"/>
+                        </Frame>
+                    </VerticalStackLayout>
+                </ScrollView>
+
+                <!-- Input Area -->
+                <StackLayout Grid.Row="2"
+                             Orientation="Horizontal" Padding="10">
+                    <Entry x:Name="MessageEntry"
+                           Placeholder="Type your message..."
+                           HorizontalOptions="FillAndExpand"/>
+                    <Button Text="Send" Clicked="OnSendButtonClicked"/>
+                </StackLayout>
+            </Grid>
+        </Border>
+    </Grid>
+</popup:PopupPage>
